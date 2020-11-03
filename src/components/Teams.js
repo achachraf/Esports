@@ -31,7 +31,7 @@ export const Teams = () => {
   useEffect(()=>{
     const callAPI = async ()=>{
         const response = await fetch(
-            `https://api.pandascore.co/codmw/teams?token=${token}`
+            `/api/teams?token=${token}`
           );
         const data = await response.json();
         console.log(data)

@@ -24,7 +24,7 @@ export const Leagues = ({
   useEffect(() => {
     const callAPI = async () => {
       const response = await fetch(
-        `https://api.pandascore.co/leagues?token=${API_TOKEN}`
+        `/api/leagues?token=${API_TOKEN}`
       );
       const data = await response.json();
       setLeagues(data);

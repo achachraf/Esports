@@ -15,7 +15,7 @@ export const League = ({ match }) => {
     console.log(id);
     const callAPI = async () => {
       const response = await fetch(
-        `https://api.pandascore.co/leagues/${id}?token=${token}`
+        `/api/leagues/${id}?token=${token}`
       );
       console.log(response)
       if (response.status != 200) {
