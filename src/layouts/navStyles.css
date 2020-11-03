@@ -1,0 +1,30 @@
+.MuiOutlinedInput-notchedOutline{
+    border-color: white !important;
+    
+}
+.MuiOutlinedInput-root{
+    color: white !important;
+}
+
+.header-buttons{
+    order: 2;
+    margin-left: auto;
+    color: white !important;
+    
+}
+
+.menu-element{
+    margin-left: 20px !important;
+    vertical-align: middle;
+    height: 40px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    text-decoration: none;
+    color: white;
+}
