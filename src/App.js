@@ -25,7 +25,6 @@ const App = () => {
           leagues={leagues}
           game={game}
           setGame={setGame}
-          loading={false}
           setCurrentPage={setCurrentPage}
           />
         <Switch>
@@ -37,8 +36,6 @@ const App = () => {
             path="/leagues"
             render={() => (
               <Leagues
-                setFilteredLeagues={setFilteredLeagues}
-                filteredLeagues={filteredLeagues}
                 leagues={leagues}
                 setLeagues={setLeagues}
                 game={game}

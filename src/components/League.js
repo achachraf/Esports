@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Redirect, useParams } from "react-router-dom";
-import { SerieItem } from "../layouts/SerieItem";
+import { API_TOKEN,API } from "../utils/constants";
+import {SerieItem} from "./../layouts/SerieItem"
 
-const token = process.env.REACT_APP_API_TOKEN;
 
 export const League = ({ match }) => {
   const { id } = useParams();
@@ -15,7 +15,7 @@ export const League = ({ match }) => {
     console.log(id);
     const callAPI = async () => {
       const response = await fetch(
-        `/api/leagues/${id}?token=${token}`
+        `${API}/leagues/${id}?token=${API_TOKEN}`
       );
       console.log(response)
       if (response.status != 200) {

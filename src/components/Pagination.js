@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { LEAGUES_PER_PAGE } from "../utils/constants";
+import { LEAGUES_PER_PAGE,TEAMS_PER_PAGE } from "../utils/constants";
 
 export const Pagination = ({
   currentPage,
   setCurrentPage,
   game,
   leagues,
-  teams
+  total
 }) => {
   const handleClick = (e) => {
     setCurrentPage(parseInt(e.target.textContent));
@@ -23,10 +23,11 @@ export const Pagination = ({
   const [number, setNumber] = useState(0);
 
   useEffect(()=>{
-    if(teams){
-      setNumber(Math.ceil(teams.length/LEAGUES_PER_PAGE))
+    console.log(total)
+    if(total){
+      setNumber(Math.ceil(total/TEAMS_PER_PAGE))
     }
-  },[teams])
+  },[total])
 
   useEffect(() => {
     let ct = 0;
@@ -45,6 +46,10 @@ export const Pagination = ({
       setNumber(Math.ceil(ct / LEAGUES_PER_PAGE));
     }
   }, [leagues, game]);
+
+  useEffect(()=>{
+    console.log("number is:" + number)
+  },[number])
 
   return (
     <div>

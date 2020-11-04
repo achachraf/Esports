@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { LeagueLayout } from "../layouts/LeagueLayout";
 import { Pagination } from "./Pagination";
-import { LEAGUES_PER_PAGE, API_TOKEN } from "../utils/constants";
+import { LEAGUES_PER_PAGE, API_TOKEN,API } from "../utils/constants";
 
 export const Leagues = ({
   leagues,
@@ -24,7 +24,7 @@ export const Leagues = ({
   useEffect(() => {
     const callAPI = async () => {
       const response = await fetch(
-        `/api/leagues?token=${API_TOKEN}`
+        `${API}/leagues?token=${API_TOKEN}`
       );
       const data = await response.json();
       setLeagues(data);

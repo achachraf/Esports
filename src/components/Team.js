@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Redirect, useParams } from "react-router-dom";
 import { SerieItem } from "../layouts/SerieItem";
+import {API,API_TOKEN} from "../utils/constants"
 
-const token = process.env.REACT_APP_API_TOKEN;
 
 export const Team = ({ match }) => {
   const { id } = useParams();
@@ -13,7 +13,7 @@ export const Team = ({ match }) => {
     console.log(id);
     const callAPI = async () => {
       const response = await fetch(
-        `/api/teams/${id}?token=${token}`
+        `${API}/teams/${id}?token=${API_TOKEN}`
       );
       if (response.status !== 200) {
         <Redirect to="/NotFound" />;
@@ -47,7 +47,7 @@ export const Team = ({ match }) => {
           <h4>Players 🎮 : </h4>
           <span style={{fontSize:20,fontWeight:"bold"}}>
             {team.players.length !== 0 && team.players.map((player,index)=>{
-                return (<span className={index===0?"":"ml-4"}>{player.name}</span>)
+                return (<span key={index} className={index===0?"":"ml-4"}>{player.name}</span>)
             })}
           </span>
         </div>
