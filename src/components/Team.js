@@ -13,7 +13,7 @@ export const Team = ({ match }) => {
     console.log(id);
     const callAPI = async () => {
       const response = await fetch(
-        `https://api.pandascore.co/teams/${id}?token=${token}`
+        `/api/teams/${id}?token=${token}`
       );
       if (response.status !== 200) {
         <Redirect to="/NotFound" />;

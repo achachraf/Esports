@@ -6,6 +6,7 @@ export const Pagination = ({
   setCurrentPage,
   game,
   leagues,
+  teams
 }) => {
   const handleClick = (e) => {
     setCurrentPage(parseInt(e.target.textContent));
@@ -20,6 +21,12 @@ export const Pagination = ({
   };
 
   const [number, setNumber] = useState(0);
+
+  useEffect(()=>{
+    if(teams){
+      setNumber(Math.ceil(teams.length/LEAGUES_PER_PAGE))
+    }
+  })
 
   useEffect(() => {
     let ct = 0;
