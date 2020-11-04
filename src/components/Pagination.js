@@ -26,7 +26,7 @@ export const Pagination = ({
     if(teams){
       setNumber(Math.ceil(teams.length/LEAGUES_PER_PAGE))
     }
-  })
+  },[teams])
 
   useEffect(() => {
     let ct = 0;
