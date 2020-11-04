@@ -18,7 +18,7 @@ export const Teams = () => {
   useEffect(() => {
     const callAPI = async () => {
       const response = await fetch(
-        `https://api.pandascore.co/codmw/teams?page[size]=${LEAGUE_PER_PAGE}&page[number]=${currentPage}&token=${token}`
+        `/api/codmw/teams?page[size]=${LEAGUE_PER_PAGE}&page[number]=${currentPage}&token=${token}`
       );
       const data = await response.json();
       setTeams(data);
